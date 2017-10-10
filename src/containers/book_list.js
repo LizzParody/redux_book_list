@@ -1,6 +1,8 @@
 //A container is a component that has access to the state produced by Redux
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { selectBook } from '../actions/index'//import the action creator
+import { bindActionCreators } from 'redux' //a function that makes sure the actions flows through all the reducers
 
 class BookList extends Component {
   renderList(){
@@ -19,7 +21,8 @@ class BookList extends Component {
   }
 }
 
-function mapStateToProps(state) { //It takes the entire state and Whatever is returned will show up as props inside of BookList
+//It takes the entire state and Whatever is returned will show up as props inside of BookList container
+function mapStateToProps(state) {
   //when the state changes, this container will instantly render with the new list of books,
   //also, the object in the state function will be assigned as props to the component
   return {
@@ -27,4 +30,11 @@ function mapStateToProps(state) { //It takes the entire state and Whatever is re
   };
 }
 
-export default connect(mapStateToProps)(BookList); //coonect takes a function and a component and produces a container
+//Everything returned from this function will end up as Props on the BookList container
+function mapDispatchToProps(dispatch) {
+  //Whenever selectBook is called, the result should be passed to all the reducers as props: this.props.selectBook
+  return bindActionCreators({ selectBook: selectBook}, dispatch); //created the selectBook key that the value is the selectBook (action creator) we imported from actions. The result will flow to dispatch, and dispatch its what takes all the actions and put them back to the reducers
+}
+
+//Promote BookList from a component to a container, it needs to know about this new dispatch method, selectBook. Make it available as a prop.
+export default connect(mapStateToProps, mapDispatchToProps)(BookList); //coonect takes a function and a component and produces a container
