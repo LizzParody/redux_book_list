@@ -4,6 +4,15 @@ export default function () { //Create the BooksReducer
     { title: 'A Song of Ice and Fire', pages: 873},
     { title: 'The Old And The Sea', pages: 156},
     { title: 'A Hundred Years of Solitud', pages: 102},
-    { title: 'The Power of Your Subconscious Mind', pages: 208}
+    { title: 'To Kill a Mockingbird', author: 'Harper Lee', pages: 281, published: 'July 11, 1960'},
+    { title: '1984', pages: 208},
+    { title: 'The Lord of The Rings', pages: 208},
+    { title: 'The Catcher in the Rye ', pages: 208},
+    { title: 'Harry Potter', pages: 208},
+    { title: 'Lord of the Flies', pages: 208},
+    { title: 'Animal Farm', pages: 208},
+    { title: 'Converstations With God', pages: 208},
+    { title: 'The Lion, the Witch, and the Wardrobe ', pages: 208},
+    { title: 'A Clockwork Orange', pages: 208},
   ];
 }
