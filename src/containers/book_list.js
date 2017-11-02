@@ -35,7 +35,7 @@ function mapStateToProps(state) {
   };
 }
 
-//Everything returned from this function will end up as Props on the BookList container
+//Everything returned from this function will end up as Props on the container
 function mapDispatchToProps(dispatch) {
   //Whenever selectBook is called, the result should be passed to all the reducers as props: this.props.selectBook
   return bindActionCreators({ selectBook: selectBook}, dispatch); //created the selectBook key that the value is the selectBook (action creator) we imported from actions. The result will flow to dispatch, and dispatch its what takes all the actions and put them back to the reducers
@@ -43,3 +43,4 @@ function mapDispatchToProps(dispatch) {
 
 //Promote BookList from a component to a container, it needs to know about this new dispatch method, selectBook. Make it available as a prop.
 export default connect(mapStateToProps, mapDispatchToProps)(BookList); //connect takes a function and a component and produces a container
+//mapDispatchToProps It is used with connect function, such a way that the  action returned by a action-creator is dispatched into the redux store, where all the state of the application resides.
