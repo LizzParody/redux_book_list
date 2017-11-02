@@ -10,7 +10,7 @@ class BookList extends Component {
       return (
         <li
           key={book.title}
-          onClick={() => this.props.selectBook(book)}
+          onClick={() => this.props.selectBook(book)} //when the user clicks, it re-render itself -> actions selectBook(book) -> reducer return the payload (book)
           className="list-group-item">
           {book.title}
         </li>
@@ -42,4 +42,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 //Promote BookList from a component to a container, it needs to know about this new dispatch method, selectBook. Make it available as a prop.
-export default connect(mapStateToProps, mapDispatchToProps)(BookList); //coonect takes a function and a component and produces a container
+export default connect(mapStateToProps, mapDispatchToProps)(BookList); //connect takes a function and a component and produces a container

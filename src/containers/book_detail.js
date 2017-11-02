@@ -22,7 +22,7 @@ class BookDetail extends Component {
 
 function mapStateToProps(state) {
   return { //the object we return is going to show up as propos inside BookDetail
-    book: state.activeBook //the activeBook piece of state is created in index.js
+    book: state.activeBook //the activeBook piece of state is created in reducers/index.js
   };
 }
 
