@@ -19,7 +19,7 @@ class BookList extends Component {
   }
   render() {
     return (
-      <ul className="list-group col-sm-4" style={{'padding-top': '50px'}}>
+      <ul className="list-group col-sm-4" style={{'padding-top': '50px', 'cursor': 'pointer'}}>
         {this.renderList()} { /* It calls the renderList helper function */}
       </ul>
     )
